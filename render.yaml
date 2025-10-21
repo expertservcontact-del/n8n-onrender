@@ -4,7 +4,7 @@ services:
     env: node
     plan: free
     buildCommand: "npm install"
-    startCommand: "npx n8n start"
+    startCommand: "npx n8n start --port $PORT"
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
@@ -14,3 +14,9 @@ services:
         value: "admin123"
       - key: N8N_ENCRYPTION_KEY
         value: "X7a9P2mQ5vT1sW3zR8yF4eL0cJ2dH6nB"
+      - key: N8N_HOST
+        value: "0.0.0.0"
+      - key: N8N_DIAGNOSTICS_ENABLED
+        value: "false"
+      - key: N8N_PERSONALIZATION_ENABLED
+        value: "false"
